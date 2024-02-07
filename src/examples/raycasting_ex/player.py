@@ -50,16 +50,16 @@ class Player:
             self.y += dy
 
     def draw(self) -> None:
-        pg.draw.line(
-            self.game.screen,
-            'yellow',
-            tuple([100 * _ for _ in self.pos]),
-            (
-                self.x * 100 + self.game.cfg.WIDTH * math.cos(self.angle)
-                , self.y * 100 + self.game.cfg.WIDTH * math.sin(self.angle)
-            ),
-            2,
-        )
+        # pg.draw.line(
+        #     self.game.screen,
+        #     'yellow',
+        #     tuple([100 * _ for _ in self.pos]),
+        #     (
+        #         self.x * 100 + self.game.cfg.WIDTH * math.cos(self.angle)
+        #         , self.y * 100 + self.game.cfg.WIDTH * math.sin(self.angle)
+        #     ),
+        #     2,
+        # )
         pg.draw.circle(
             self.game.screen,
             'green',
