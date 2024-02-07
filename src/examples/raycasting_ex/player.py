@@ -36,10 +36,18 @@ class Player:
                 dy += tr[1] * speed
                 d_theta += dynamics['rotation'] * rotation_speed
         
-        self.x += dx
-        self.y += dy
         self.angle += d_theta
         self.angle %= 2 * math.pi
+        self.check_wall_collision(dx, dy)
+
+    def check_wall(self, x, y) -> bool:
+        return (x, y) not in self.game.map.world_map
+
+    def check_wall_collision(self, dx, dy) -> bool:
+        if self.check_wall(int(self.x + dx), int(self.y)):
+            self.x += dx
+        if self.check_wall(int(self.x), int(self.y + dy)):
+            self.y += dy
 
     def draw(self) -> None:
         pg.draw.line(

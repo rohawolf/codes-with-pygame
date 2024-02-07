@@ -16,7 +16,7 @@ class GameSetting(BaseSetting):
 GAME = GameSetting(
     WIDTH=1600,
     HEIGHT=900,
-    FPS=60,
+    FPS=0, # FPS=60,
 )
 
 # player settings
